@@ -3,14 +3,15 @@ package com.cunnj.activities;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
@@ -87,9 +88,13 @@ public class AllTasksListFragment extends Fragment implements AllTasksListAsyncP
 		case ExpandableListView.PACKED_POSITION_TYPE_CHILD:
 			MyActivityInfo activity = (MyActivityInfo) list.getExpandableListAdapter().getChild(ExpandableListView.getPackedPositionGroup(info.packedPosition), ExpandableListView.getPackedPositionChild(info.packedPosition));
 			switch(item.getItemId()) {
-			case 0:
-				LauncherIconCreator.createLauncherIcon(getActivity(), activity);
-				break;
+				case 0:
+					DialogFragment dialog = new ShortcutEditDialogFragment();
+					Bundle args = new Bundle();
+					args.putParcelable("activity", activity.component_name);
+					dialog.setArguments(args);
+					dialog.show(this.getFragmentManager(), "ShortcutEditor");
+					break;
 			case 1:
 				LauncherIconCreator.launchActivity(getActivity(), activity.component_name, activity.name);
 				break;

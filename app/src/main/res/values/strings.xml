@@ -3,6 +3,8 @@
     <string name="dialog_progress_loading">Loading…</string>
     <string name="context_action_launch">Launch activity</string>
     <string name="context_action_shortcut">Create shortcut</string>
+    <string name="context_action_edit">Edit shortcut</string>
+    <string name="label_name">Label</string>
     <string name="label_icon">Icon</string>
     <string name="starting_activity">Starting activity: %s</string>
     <string name="starting_application">Starting application: %s</string>
