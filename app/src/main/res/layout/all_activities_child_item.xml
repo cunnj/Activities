@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="?android:attr/activatedBackgroundIndicator"
-    android:minHeight="?android:attr/listPreferredItemHeight" >
+    android:minHeight="?android:attr/listPreferredItemHeight">
 
     <ImageView
         android:id="@android:id/icon"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|center_vertical"
         android:orientation="vertical"
-        android:paddingLeft="10dp" >
+        android:paddingLeft="10dp">
 
         <TextView
             android:id="@android:id/text1"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"
             android:textIsSelectable="false"
-            android:textAppearance="?android:attr/textAppearanceListItem" />
+            android:textAppearance="?android:attr/textAppearanceListItem"/>
 
         <TextView
             android:id="@android:id/text2"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"
             android:textIsSelectable="false"
-            android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
+            android:textAppearance="?android:attr/textAppearanceListItemSecondary"/>
     </LinearLayout>
 
 </LinearLayout>

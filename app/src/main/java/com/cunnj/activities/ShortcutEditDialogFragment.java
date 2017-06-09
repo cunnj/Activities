@@ -44,25 +44,6 @@ public class ShortcutEditDialogFragment extends DialogFragment {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						ShortcutEditDialogFragment.this.activity.name = ShortcutEditDialogFragment.this.text_name.getText().toString();
-						PackageManager pm = getActivity().getPackageManager();
-						try {
-							final String icon_resource_string = ShortcutEditDialogFragment.this.activity.icon_resource_name; 
-							final String pack = icon_resource_string.substring(0, icon_resource_string.indexOf(':'));
-							final String type = icon_resource_string.substring(icon_resource_string.indexOf(':') + 1, icon_resource_string.indexOf('/'));
-							final String name = icon_resource_string.substring(icon_resource_string.indexOf('/') + 1, icon_resource_string.length());
-							
-							Resources resources = pm.getResourcesForApplication(pack);
-							ShortcutEditDialogFragment.this.activity.icon_resource = resources.getIdentifier(name, type, pack);
-							if(ShortcutEditDialogFragment.this.activity.icon_resource != 0) {
-								ShortcutEditDialogFragment.this.activity.icon = (BitmapDrawable)resources.getDrawable(ShortcutEditDialogFragment.this.activity.icon_resource);
-							} else {
-								ShortcutEditDialogFragment.this.activity.icon = (BitmapDrawable)pm.getDefaultActivityIcon();
-							}
-						} catch (NameNotFoundException e) {
-							ShortcutEditDialogFragment.this.activity.icon = (BitmapDrawable)pm.getDefaultActivityIcon();
-						} catch (Exception e) {
-							ShortcutEditDialogFragment.this.activity.icon = (BitmapDrawable)pm.getDefaultActivityIcon();
-						}
 						
 						LauncherIconCreator.createLauncherIcon(getActivity(), ShortcutEditDialogFragment.this.activity);
 					}
