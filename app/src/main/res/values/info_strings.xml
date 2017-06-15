@@ -16,7 +16,7 @@
     <string name="library_ActivityLauncher_isOpenSource">true</string>
     <string name="library_ActivityLauncher_repositoryLink">https://github.com/butzist/ActivityLauncher</string>
 
-    <string name="define_license_isc"/>
+    <string name="define_license_isc" />
     <string name="license_isc_licenseName">ISC</string>
     <string name="license_isc_licenseWebsite">https://opensource.org/licenses/ISC</string>
     <string name="license_isc_licenseShortDescription">
