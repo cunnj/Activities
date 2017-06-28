@@ -19,7 +19,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.widget.Toast;
 
 import com.cunnj.activities.MyActivityInfo;
-import com.cunnj.activities.MyPackageInfo;
 import com.cunnj.activities.R;
 
 public class LauncherIconCreator {
@@ -43,11 +42,6 @@ public class LauncherIconCreator {
         }
     }
 
-    public static void createLauncherIcon(Context context, MyPackageInfo pack) {
-        Intent intent = context.getPackageManager().getLaunchIntentForPackage(pack.getPackageName());
-        createLauncherIcon(context, intent, pack.getName(), pack.getIconResourceName());
-    }
-
     public static void createLauncherIcon(Context context, ComponentName activity, String name, BitmapDrawable icon) {
         Toast.makeText(context, String.format(context.getText(R.string.creating_activity_shortcut).toString(), name), Toast.LENGTH_LONG).show();
 
@@ -69,21 +63,6 @@ public class LauncherIconCreator {
         shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
         Intent.ShortcutIconResource ir = new Intent.ShortcutIconResource();
         ir.packageName = activity.getPackageName();
-        ir.resourceName = icon_resource_name;
-        shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, ir);
-        shortcutIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-        context.sendBroadcast(shortcutIntent);
-        //finish();
-    }
-
-    public static void createLauncherIcon(Context context, Intent intent, String name, String icon_resource_name) {
-        Toast.makeText(context, String.format(context.getText(R.string.creating_application_shortcut).toString(), name), Toast.LENGTH_LONG).show();
-
-        Intent shortcutIntent = new Intent();
-        shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
-        shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
-        Intent.ShortcutIconResource ir = new Intent.ShortcutIconResource();
-        ir.packageName = intent.getPackage();
         ir.resourceName = icon_resource_name;
         shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, ir);
         shortcutIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
