@@ -16,6 +16,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.widget.Toast;
 
 import com.cunnj.activities.MyActivityInfo;
@@ -42,7 +43,8 @@ public class LauncherIconCreator {
         }
     }
 
-    public static void createLauncherIcon(Context context, ComponentName activity, String name, BitmapDrawable icon) {
+    public static void createLauncherIcon(Context context, ComponentName activity, String name, Drawable iconTemp) {
+        BitmapDrawable icon = (BitmapDrawable) iconTemp;
         Toast.makeText(context, String.format(context.getText(R.string.creating_activity_shortcut).toString(), name), Toast.LENGTH_LONG).show();
 
         Intent shortcutIntent = new Intent();
