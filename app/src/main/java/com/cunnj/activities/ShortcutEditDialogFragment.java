@@ -28,10 +28,10 @@ public class ShortcutEditDialogFragment extends DialogFragment {
         LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.dialog_edit_activity, null);
 
-        this.text_name = (EditText) view.findViewById(R.id.editText_name);
+        this.text_name = view.findViewById(R.id.editText_name);
         this.text_name.setText(this.activity.name);
 
-        this.image_icon = (ImageButton) view.findViewById(R.id.iconButton);
+        this.image_icon = view.findViewById(R.id.iconButton);
         ShortcutEditDialogFragment.this.image_icon.setImageDrawable(this.activity.icon);
 
         builder.setTitle(R.string.context_action_edit)

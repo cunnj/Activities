@@ -10,6 +10,13 @@ import android.graphics.drawable.Drawable;
 import java.util.Arrays;
 
 public class MyPackageInfo implements Comparable<MyPackageInfo> {
+    protected String package_name;
+    protected Drawable icon;
+    protected int icon_resource;
+    protected String icon_resource_name;
+    protected String name;
+    protected MyActivityInfo[] activities;
+
     public MyPackageInfo(PackageInfo info, PackageManager pm, PackageManagerCache cache) {
         this.package_name = info.packageName;
         ApplicationInfo app = info.applicationInfo;
@@ -17,14 +24,14 @@ public class MyPackageInfo implements Comparable<MyPackageInfo> {
         if (app != null) {
             this.name = pm.getApplicationLabel(app).toString();
             try {
-                this.icon = (Drawable) pm.getApplicationIcon(app);
+                this.icon = pm.getApplicationIcon(app);
             } catch (ClassCastException e) {
-                this.icon = (Drawable) pm.getDefaultActivityIcon();
+                this.icon = pm.getDefaultActivityIcon();
             }
             this.icon_resource = app.icon;
         } else {
             this.name = info.packageName;
-            this.icon = (Drawable) pm.getDefaultActivityIcon();
+            this.icon = pm.getDefaultActivityIcon();
             this.icon_resource = 0;
         }
 
@@ -89,13 +96,6 @@ public class MyPackageInfo implements Comparable<MyPackageInfo> {
     public String getIconResourceName() {
         return icon_resource_name;
     }
-
-    protected String package_name;
-    protected Drawable icon;
-    protected int icon_resource;
-    protected String icon_resource_name;
-    protected String name;
-    protected MyActivityInfo[] activities;
 
     @Override
     public int compareTo(MyPackageInfo another) {

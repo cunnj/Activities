@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
@@ -25,7 +25,7 @@ public class AllTasksListFragment extends Fragment implements AllTasksListAsyncP
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_all_list, null);
 
-        this.list = (ExpandableListView) view.findViewById(R.id.expandableListView1);
+        this.list = view.findViewById(R.id.expandableListView1);
 
         this.list.setOnChildClickListener(new OnChildClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class AllTasksListFragment extends Fragment implements AllTasksListAsyncP
                                     ContextMenuInfo menuInfo) {
 
         ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
-        ExpandableListView list = (ExpandableListView) getView().findViewById(R.id.expandableListView1);
+        ExpandableListView list = getView().findViewById(R.id.expandableListView1);
 
         switch (ExpandableListView.getPackedPositionType(info.packedPosition)) {
             case ExpandableListView.PACKED_POSITION_TYPE_CHILD:
@@ -74,7 +74,7 @@ public class AllTasksListFragment extends Fragment implements AllTasksListAsyncP
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) item.getMenuInfo();
-        ExpandableListView list = (ExpandableListView) getView().findViewById(R.id.expandableListView1);
+        ExpandableListView list = getView().findViewById(R.id.expandableListView1);
 
         switch (ExpandableListView.getPackedPositionType(info.packedPosition)) {
             case ExpandableListView.PACKED_POSITION_TYPE_CHILD:
