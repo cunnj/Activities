@@ -1,18 +1,19 @@
 package com.cunnj.activities;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
 import org.thirdparty.LauncherIconCreator;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 
 public class ShortcutEditDialogFragment extends DialogFragment {
     protected MyActivityInfo activity;
