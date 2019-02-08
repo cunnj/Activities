@@ -120,3 +120,4 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 release/
+sign.jar
