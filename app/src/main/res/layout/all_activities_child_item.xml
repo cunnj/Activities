@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/activatedBackgroundIndicator"
-    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:minHeight="?attr/listPreferredItemHeight"
     android:orientation="horizontal">
 
     <ImageView
@@ -12,7 +13,7 @@
         android:layout_height="40dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="40dp"
-        android:src="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"
-            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textAppearance="?attr/textAppearanceListItem"
             android:textIsSelectable="false" />
 
         <TextView
@@ -34,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"
-            android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+            android:textAppearance="?attr/textAppearanceListItemSecondary"
             android:textColor="@android:color/darker_gray"
             android:textIsSelectable="false" />
     </LinearLayout>

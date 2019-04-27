@@ -4,9 +4,15 @@ import android.content.ComponentName;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 
 public class MyActivityInfo implements Comparable<MyActivityInfo> {
+    protected ComponentName component_name;
+    protected Drawable icon;
+    protected int icon_resource;
+    protected String icon_resource_name;
+    protected String name;
+
     public MyActivityInfo(ComponentName activity, PackageManager pm) {
         this.component_name = activity;
 
@@ -15,14 +21,14 @@ public class MyActivityInfo implements Comparable<MyActivityInfo> {
             act = pm.getActivityInfo(activity, 0);
             this.name = act.loadLabel(pm).toString();
             try {
-                this.icon = (BitmapDrawable) act.loadIcon(pm);
+                this.icon = act.loadIcon(pm);
             } catch (ClassCastException e) {
-                this.icon = (BitmapDrawable) pm.getDefaultActivityIcon();
+                this.icon = pm.getDefaultActivityIcon();
             }
             this.icon_resource = act.getIconResource();
         } catch (NameNotFoundException e) {
             this.name = activity.getShortClassName();
-            this.icon = (BitmapDrawable) pm.getDefaultActivityIcon();
+            this.icon = pm.getDefaultActivityIcon();
             this.icon_resource = 0;
         }
 
@@ -39,7 +45,7 @@ public class MyActivityInfo implements Comparable<MyActivityInfo> {
         return component_name;
     }
 
-    public BitmapDrawable getIcon() {
+    public Drawable getIcon() {
         return icon;
     }
 
@@ -50,13 +56,6 @@ public class MyActivityInfo implements Comparable<MyActivityInfo> {
     public String getIconResourceName() {
         return icon_resource_name;
     }
-
-    protected ComponentName component_name;
-    protected BitmapDrawable icon;
-    protected int icon_resource;
-    protected String icon_resource_name;
-    protected String name;
-
 
     @Override
     public int compareTo(MyActivityInfo another) {

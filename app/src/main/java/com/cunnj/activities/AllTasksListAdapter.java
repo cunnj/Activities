@@ -60,13 +60,13 @@ public class AllTasksListAdapter extends BaseExpandableListAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.all_activities_child_item, null);
 
-        TextView text1 = (TextView) view.findViewById(android.R.id.text1);
+        TextView text1 = view.findViewById(android.R.id.text1);
         text1.setText(activity.getName());
 
-        TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+        TextView text2 = view.findViewById(android.R.id.text2);
         text2.setText(activity.getComponentName().getShortClassName());
 
-        ImageView icon = (ImageView) view.findViewById(android.R.id.icon);
+        ImageView icon = view.findViewById(android.R.id.icon);
         icon.setImageDrawable(activity.getIcon());
 
         return view;
@@ -98,13 +98,13 @@ public class AllTasksListAdapter extends BaseExpandableListAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.all_activities_group_item, null);
 
-        TextView text = (TextView) view.findViewById(android.R.id.text1);
+        TextView text = view.findViewById(android.R.id.text1);
         text.setText(pack.getName());
 
-        TextView text2 = (TextView) view.findViewById(android.R.id.text2);
+        TextView text2 = view.findViewById(android.R.id.text2);
         text2.setText(pack.getPackageName());
 
-        ImageView icon = (ImageView) view.findViewById(android.R.id.icon);
+        ImageView icon = view.findViewById(android.R.id.icon);
         icon.setImageDrawable(pack.getIcon());
 
         return view;
