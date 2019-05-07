@@ -20,16 +20,11 @@
             android:background="@null"
             app:srcCompat="@mipmap/ic_launcher" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="4dp"
-            android:text="@string/label_name" />
-
         <EditText
             android:id="@+id/editText_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/label_name"
             android:inputType="text" />
 
     </LinearLayout>
