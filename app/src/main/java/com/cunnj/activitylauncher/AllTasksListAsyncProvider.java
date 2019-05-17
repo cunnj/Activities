@@ -1,11 +1,11 @@
-package com.cunnj.activities;
+package com.cunnj.activitylauncher;
 
 import android.content.Context;
 
 public class AllTasksListAsyncProvider extends AsyncProvider<AllTasksListAdapter> {
     public AllTasksListAsyncProvider(
             Context context,
-            com.cunnj.activities.AsyncProvider.Listener<AllTasksListAdapter> listener) {
+            com.cunnj.activitylauncher.AsyncProvider.Listener<AllTasksListAdapter> listener) {
         super(context, listener, true);
     }
 

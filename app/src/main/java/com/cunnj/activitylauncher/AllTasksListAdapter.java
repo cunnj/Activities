@@ -1,4 +1,4 @@
-package com.cunnj.activities;
+package com.cunnj.activitylauncher;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

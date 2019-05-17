@@ -29,11 +29,10 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-import com.cunnj.activities.MyActivityInfo;
-import com.cunnj.activities.R;
+import com.cunnj.activitylauncher.MyActivityInfo;
+import com.cunnj.activitylauncher.R;
 
 public class LauncherIconCreator {
-
     private static Intent getActivityIntent(ComponentName activity) {
         Intent intent = new Intent();
         intent.setComponent(activity);

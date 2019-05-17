@@ -1,4 +1,4 @@
-package com.cunnj.activities;
+package com.cunnj.activitylauncher;
 
 import android.app.ProgressDialog;
 import android.content.Context;

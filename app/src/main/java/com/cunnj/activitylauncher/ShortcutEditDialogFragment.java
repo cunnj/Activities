@@ -1,4 +1,4 @@
-package com.cunnj.activities;
+package com.cunnj.activitylauncher;
 
 import android.app.Dialog;
 import android.content.ComponentName;
